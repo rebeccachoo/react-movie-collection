@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useMovieState } from "../MovieContext";
 
 const SelectionStyle = styled.div`
 	background-color: #ded9e2;
@@ -9,7 +10,8 @@ const SelectionStyle = styled.div`
 `;
 
 const Selections = () => {
-	return <SelectionStyle></SelectionStyle>;
+	const movies = useMovieState();
+	return <SelectionStyle>{movies.map((id) => console.log(id))}</SelectionStyle>;
 };
 
 export default Selections;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Movie from "./components/Movie";
+import Movies from "./components/Movies";
 import Selections from "./components/Selections";
 import { MovieProvider } from "./MovieContext";
 
@@ -43,7 +43,7 @@ class App extends Component {
 				musicBy: "James Newton Howard",
 			},
 			{
-				id: 2,
+				id: 3,
 				name: "Raya and the Last Dragon",
 				img: "images/Raya_and_the_Last_Dragon.png",
 				storyBy: "Qui Nguyen, Adele Lim",
@@ -51,7 +51,7 @@ class App extends Component {
 				musicBy: "James Newton Howard",
 			},
 			{
-				id: 2,
+				id: 4,
 				name: "Raya and the Last Dragon",
 				img: "images/Raya_and_the_Last_Dragon.png",
 				storyBy: "Qui Nguyen, Adele Lim",
@@ -59,7 +59,7 @@ class App extends Component {
 				musicBy: "James Newton Howard",
 			},
 			{
-				id: 2,
+				id: 5,
 				name: "Raya and the Last Dragon",
 				img: "images/Raya_and_the_Last_Dragon.png",
 				storyBy: "Qui Nguyen, Adele Lim",
@@ -67,7 +67,7 @@ class App extends Component {
 				musicBy: "James Newton Howard",
 			},
 			{
-				id: 2,
+				id: 6,
 				name: "Raya and the Last Dragon",
 				img: "images/Raya_and_the_Last_Dragon.png",
 				storyBy: "Qui Nguyen, Adele Lim",
@@ -82,9 +82,9 @@ class App extends Component {
 			<MovieProvider>
 				<WrapperStyle>
 					<TitleStyle>Your Chosen Movies</TitleStyle>
-					<Selections />
+					<Selections lists={this.state.lists} />
 					<TitleStyle>Movie Collection</TitleStyle>
-					<Movie lists={this.state.lists} />
+					<Movies lists={this.state.lists} />
 				</WrapperStyle>
 			</MovieProvider>
 		);

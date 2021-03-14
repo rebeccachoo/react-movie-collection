@@ -1,11 +1,13 @@
 import React, { useReducer, createContext, useContext } from "react";
 
-const initialState = [1, 2];
+const initialState = [];
 
 function movieReducer(state, action) {
 	switch (action.type) {
-		case "ADD":
-			return state.concat(action.id);
+		case "SELECTED":
+			return state.includes(action.id)
+				? state.filter((id) => id !== action.id)
+				: state.concat(action.id);
 		default:
 			throw new Error("");
 	}

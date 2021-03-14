@@ -1,18 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useMovieDispatch, useMovieState } from "../MovieContext";
 
-const MovieContainerStyle = styled.ul`
-	display: flex;
-	flex-direction: row;
-	box-sizing: border-box;
-	width: 100%;
-	padding: 10px;
-	padding-left: 1%;
-	padding-right: 1%;
-	flex-wrap: wrap;
-	margin: 0 auto;
-	justify-content: center;
-`;
 const ListStyle = styled.li`
 	font-size: 17px;
 	list-style: none;
@@ -24,20 +13,24 @@ const ListStyle = styled.li`
 	padding-top: 20px;
 	cursor: pointer;
 	&:hover {
-		background-color: orange;
+		background-color: #abc8c0;
 	}
+	background: ${(props) =>
+		props.hightlight === "active" ? "#DAF7DC" : "white"};
 `;
 
-const Movie = ({ lists }) => {
+const Movie = ({ id, src, name }) => {
+	const dispatch = useMovieDispatch();
+	const state = useMovieState();
+	const onClick = () => dispatch({ type: "SELECTED", id });
+	const hightlight = state.includes(id) ? "active" : "inactive";
+
 	return (
-		<MovieContainerStyle>
-			{lists.map((list) => (
-				<ListStyle key={list.id}>
-					<img src={list.img} alt="movie" width="140" height="200" />
-					{list.name}
-				</ListStyle>
-			))}
-		</MovieContainerStyle>
+		<ListStyle onClick={onClick} hightlight={hightlight}>
+			<img src={src} alt="" width="140" height="200" />
+			<br />
+			{name}
+		</ListStyle>
 	);
 };
 

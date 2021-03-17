@@ -13,13 +13,16 @@ const ListStyle = styled.li`
 	padding-top: 20px;
 	cursor: pointer;
 	&:hover {
-		background-color: #abc8c0;
+		background-color: #f8f4e3;
 	}
 	background: ${(props) =>
 		props.hightlight === "active" ? "#DAF7DC" : "white"};
 `;
+const MovieTitleStyle = styled.div`
+	font-weight: bold;
+`;
 
-const Movie = ({ id, src, name }) => {
+const Movie = ({ id, src, name, storyBy, directorBy, musicBy }) => {
 	const dispatch = useMovieDispatch();
 	const state = useMovieState();
 	const onClick = () => dispatch({ type: "SELECTED", id });
@@ -29,7 +32,13 @@ const Movie = ({ id, src, name }) => {
 		<ListStyle onClick={onClick} hightlight={hightlight}>
 			<img src={src} alt="" width="140" height="200" />
 			<br />
-			{name}
+			<MovieTitleStyle>{name}</MovieTitleStyle>
+			<br />
+			Story By: {storyBy}
+			<br />
+			Director By: {directorBy}
+			<br />
+			Music By: {musicBy}
 		</ListStyle>
 	);
 };

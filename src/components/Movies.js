@@ -19,7 +19,15 @@ const Movies = ({ lists }) => {
 	return (
 		<MovieContainerStyle>
 			{lists.map((list) => (
-				<Movie key={list.id} id={list.id} src={list.img} name={list.name} />
+				<Movie
+					key={list.id}
+					id={list.id}
+					src={list.img}
+					name={list.name}
+					storyBy={list.storyBy}
+					directorBy={list.directorBy}
+					musicBy={list.musicBy}
+				/>
 			))}
 		</MovieContainerStyle>
 	);

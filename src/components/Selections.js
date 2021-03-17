@@ -14,7 +14,7 @@ const SelectionStyle = styled.div`
 	justify-content: flex-start;
 `;
 const ChosenMovieStyle = styled.div`
-	width: 15%;
+	width: 8%;
 	margin-right: 2%;
 	height: 150px;
 	/* border: 1px solid black; */

@@ -1,6 +1,6 @@
 # React - Movie Selection
 
-This single page show movie posters and information and you can choose any movie you like. For styles, it is using styled-components. And it uses context and reducer.<br /><br /><br />
+This single page show movie posters and information and you can choose any movie you like. For styles, it is using styled-components. And it uses context and reducer for managing selected movies information. The context file's name is MovieContext.js in src file.<br /><br /><br />
 
 | Feature | Description |
 | -----: | :----------- |

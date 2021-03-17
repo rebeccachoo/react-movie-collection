@@ -4,7 +4,7 @@ This single page show movie posters and information and you can choose any movie
 
 | Feature | Description |
 | -----: | :----------- |
-|  Slow Mode | <img src="https://github.com/rebeccachoo/react-movie-collection/blob/main/screenshot.png?raw=true"  width="400">| 
+|  Screen | <img src="https://github.com/rebeccachoo/react-movie-collection/blob/main/screenshot.png?raw=true"  width="400">| 
 
 ## Installation
 
